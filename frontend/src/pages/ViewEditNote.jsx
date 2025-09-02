@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-
+import { VITE_URL } from '../config.js';
 const ViewEditNote = () => {
   const navigate = useNavigate();
   const { noteId } = useParams();
