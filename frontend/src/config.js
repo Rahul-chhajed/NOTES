@@ -8,4 +8,4 @@ export const STORAGE_BUCKET=import.meta.env.VITE_STORAGE_BUCKET
 export const MESSAGING_SENDER_ID=import.meta.env.VITE_MESSAGING_SENDER_ID
 export const APP_ID=import.meta.env.VITE_APP_ID
 export const MEASURMENT_ID=import.meta.env.VITE_MEASURMENT_ID
-export const URL=import.meta.env.VITE_URL
+export const VITE_URL=import.meta.env.VITE_URL
