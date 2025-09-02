@@ -31,13 +31,16 @@ This project is a modern notes application built using the MERN stack (MongoDB, 
 ## Screenshots
 
 ### Mobile View
-![Mobile Dashboard](./frontend/Dashboard%20M.png)
+![Dashboard](./frontend/photo3.png)
 
 ### Sign-in Screen
-![Sign In Screen](./frontend/Sign%20In%20M.png)
+![Sign In Screen](./frontend/photo1.png)
 
 ### Sign-up Screen
-![Sign Up Screen](./frontend/Sign%20Up%20M%201.png)
+![Sign Up Screen](./frontend/photo2.png)
+
+### Edit and Delete Note
+![Note](./frontend/photo4.png)
 
 ## Project Structure
 
@@ -60,7 +63,7 @@ notes/
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/notes.git
+   git clone https://github.com/Rahul-chhajed/NOTES.git
    cd notes
    ```
 
@@ -80,7 +83,7 @@ notes/
    - For backend: `npm start` in the backend directory
    - For frontend: `npm run dev` in the frontend directory
 
-5. Access the application at `http://localhost:5173`
+5. Access the application at `https://noteshdcreate.netlify.app/`
 
 ## Backend API
 
