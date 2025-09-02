@@ -127,7 +127,7 @@ const Signup = () => {
         margin: "8px auto" 
       }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: 16 }}>
-          <img src="/public/top.svg" alt="HD" style={{ width: 36, marginBottom: 8 }} />
+          <img src="/top.svg" alt="HD" style={{ width: 36, marginBottom: 8 }} />
           <span style={{ fontWeight: 600, fontSize: 22 }}>HD</span>
         </div>
         <h1 style={{ fontWeight: 700, fontSize: 28, textAlign: "center", marginBottom: 8 }}>Sign up</h1>
