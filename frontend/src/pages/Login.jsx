@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../firebase";
 import axios from "axios";
-
+import { VITE_URL } from '../config.js';
 const googleLogo = "https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png";
 
 const Login = () => {
@@ -60,7 +60,7 @@ const Login = () => {
       setLoading(true);
       setError("");
       try {
-        const response = await axios.post("http://localhost:5000/api/auth/login", {
+        const response = await axios.post(`${VITE_URL}/api/auth/login`, {
           email: form.email,
         });
 
@@ -89,7 +89,7 @@ const Login = () => {
       const user = result.user;
       const idToken = await user.getIdToken();
 
-      const response = await axios.post("http://localhost:5000/api/google-auth/google", { idToken });
+      const response = await axios.post(`${VITE_URL}/api/google-auth/google`, { idToken });
       if (response.status === 200) {
         localStorage.setItem("token", response.data.token);
         localStorage.setItem("user", JSON.stringify(response.data.user));

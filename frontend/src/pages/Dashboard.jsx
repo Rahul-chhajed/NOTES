@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import { VITE_URL } from '../config.js';
 const Dashboard = () => {
 	const navigate = useNavigate();
     const [displayUser, setDisplayUser] = useState({ name: "", email: "" });
@@ -20,7 +20,7 @@ const Dashboard = () => {
                 }
                 setDisplayUser(user);
                 
-                const response = await axios.get("http://localhost:5000/api/notes", {
+                const response = await axios.get(`${VITE_URL}/api/notes`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem("token")}`
                     }
@@ -50,7 +50,7 @@ const Dashboard = () => {
     };
 
     const onDeleteNote = (noteId) => {
-        axios.delete(`http://localhost:5000/api/notes/${noteId}`, {
+        axios.delete(`${VITE_URL}/api/notes/${noteId}`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem("token")}`
             }

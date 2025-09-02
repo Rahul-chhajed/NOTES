@@ -15,7 +15,7 @@ const ViewEditNote = () => {
   useEffect(() => {
     const fetchNote = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/notes/${noteId}`, {
+        const response = await axios.get(`${VITE_URL}/api/notes/${noteId}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -52,7 +52,7 @@ const ViewEditNote = () => {
     
     try {
       await axios.put(
-        `http://localhost:5000/api/notes/${noteId}`,
+        `${VITE_URL}/api/notes/${noteId}`,
         { title, content },
         {
           headers: {
@@ -74,7 +74,7 @@ const ViewEditNote = () => {
   const handleDelete = async () => {
     if (window.confirm("Are you sure you want to delete this note?")) {
       try {
-        await axios.delete(`http://localhost:5000/api/notes/${noteId}`, {
+        await axios.delete(`${VITE_URL}/api/notes/${noteId}`, {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

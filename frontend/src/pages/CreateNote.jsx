@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {VITE_URL} from '../config.js'
 import axios from "axios";
 
 const CreateNote = () => {
@@ -27,7 +28,7 @@ const CreateNote = () => {
     
     try {
       await axios.post(
-        "http://localhost:5000/api/notes",
+        `${VITE_URL}/api/notes`,
         { title, content },
         {
           headers: {

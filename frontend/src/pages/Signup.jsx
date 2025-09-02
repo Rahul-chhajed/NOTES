@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { signInWithPopup } from "firebase/auth";
 import { auth, googleProvider } from "../firebase";
 import axios from "axios";
+import { VITE_URL } from '../config.js';
 const Signup = () => {
     const Navigate=useNavigate();
   const [form, setForm] = useState({ name: "", dob: "", email: "" });
@@ -61,7 +62,7 @@ const Signup = () => {
       setError("");
       setLoading(true);
       try {
-        const response = await axios.post("http://localhost:5000/api/auth/register", {
+        const response = await axios.post(`${VITE_URL}/api/auth/register`, {
           name: form.name,
           email: form.email,
           DOB: form.dob
@@ -90,7 +91,7 @@ const Signup = () => {
     const result = await signInWithPopup(auth, googleProvider);
     const user = result.user;
     const idToken = await user.getIdToken();
-    const response = await axios.post("http://localhost:5000/api/google-auth/google", { idToken });
+    const response = await axios.post(`${VITE_URL}/api/google-auth/google`, { idToken });
     if (response.status === 200) {
       localStorage.setItem("token", response.data.token);
       localStorage.setItem("user", JSON.stringify(response.data.user));
