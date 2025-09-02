@@ -1,0 +1,10 @@
+export const  SERVICE_ID=import.meta.env.VITE_SERVICE_ID
+export const TEMPLATE_ID=import.meta.env.VITE_TEMPLATE_ID
+export const USER_ID=import.meta.env.VITE_USER_ID
+export const API_KEY=import.meta.env.VITE_API_KEY
+export const AUTH_DOMAIN=import.meta.env.VITE_AUTH_DOMAIN
+export const PROJECT_ID=import.meta.env.VITE_PROJECT_ID
+export const STORAGE_BUCKET=import.meta.env.VITE_STORAGE_BUCKET
+export const MESSAGING_SENDER_ID=import.meta.env.VITE_MESSAGING_SENDER_ID
+export const APP_ID=import.meta.env.VITE_APP_ID
+export const MEASURMENT_ID=import.meta.env.VITE_MEASURMENT_ID
