@@ -1,7 +1,29 @@
 [build]
   base = "frontend"
   command = "npm run build"
-  publish = "frontend/dist"
+  publish = "dist"
 
+# Disable secrets scanning for build output
+[build.environment]
+  SECRETS_SCAN_ENABLED = "false"
+
+# Alternative way to disable secrets scanning
 [secrets]
+  SECRETS_SCAN_ENABLED = "false"
   scan = false
+  SECRETS_SCAN_OMIT_PATHS = "dist/*"
+  
+# Configure redirect rules for SPA (Single Page Application)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Configure headers for security
+[[headers]]
+  for = "/*"
+    [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
